@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/hugokishi/projeto-dh/issues"
   },
-  "homepage": "https://github.com/hugokishi/projeto-dh#readme"
+  "homepage": "https://github.com/hugokishi/projeto-dh#readme",
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  }
 }
