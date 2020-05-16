@@ -1,13 +1,13 @@
 <?php
-   session_start();
-     if(!isset($_SESSION['login']) || $_SESSION['login'] != true){
-       header("Location: ../../");
-     }
-     switch($_SESSION['tipoUsuario']){
-         case "cliente":
-           header("Location: ../Home");
-           break;
-  }
+    session_start();
+    if(!isset($_SESSION['login']) || $_SESSION['login'] != true){
+      header("Location: ../../");
+    }
+    switch($_SESSION['typeUser']){
+      case "cliente":
+        header("Location: ../Home");
+        break;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

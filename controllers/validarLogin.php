@@ -11,11 +11,11 @@
     $pass = $_POST['']; 
 
     if(empty($user)){
-        echo "ErroUser";
+        header('Location: /projeto-dh/view/home/login.php');
         die();
     }
     if(empty($pass)){
-        echo "ErroSenha";
+        header('Location: /projeto-dh/view/home/login.php');
         die();
     }
 
