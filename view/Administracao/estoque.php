@@ -41,7 +41,8 @@
           <div class="row">
                 <?php
                   include '../../model/buscaProd.php';
-                  buscarProduto();
+                  $fk_idUser = $_SESSION['idUser'];
+                  buscarProduto($fk_idUser);
                 ?>
           </div>
       </div>

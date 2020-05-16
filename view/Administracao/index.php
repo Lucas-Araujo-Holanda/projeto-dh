@@ -25,17 +25,15 @@
         <ul>
             <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
             <li><a href="#"><i class="fas fa-user"></i>Usuários</a></li>
-            <li><a href="#"><i class="fas fa-project-diagram"></i>Cadastro</a></li>
-            <li><a href="#"><i class="fas fa-cart-plus"></i></i>Produtos</a></li>
-            <li><a href="#"><i class="fas fa-sign-out-alt"></i>Sair</a></li>
+            <li><a href="./produtos.php"><i class="fas fa-project-diagram"></i>Cadastro</a></li>
+            <li><a href="./estoque.php"><i class="fas fa-cart-plus"></i></i>Produtos</a></li>
+            <li><a href="../cabecalhos.php"><i class="fas fa-sign-out-alt"></i>Sair</a></li>
         </ul> 
     </div>
     <div class="main_content">
         <div class="header"> Dashboard - Home </div>  
         <div class="info">
-            
-
-         
+                 
         </div>
     </div>
 </div>

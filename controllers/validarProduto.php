@@ -12,6 +12,7 @@
     $about = $_POST['about'];
     $category = $_POST['category'];
     $ativo = $_POST['ativo']; 
+    $fk_idUser = $_SESSION['idUser'];
 
     if(empty($imageProd)){
         header('Location: /projeto-dh/view/administracao/produtos.php');

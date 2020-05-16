@@ -1,13 +1,13 @@
 <?php
     session_start();
-    if(!isset($_SESSION['login']) || $_SESSION['login'] != true){
-      header("Location: ../../");
-    }
-    switch($_SESSION['typeUser']){
-      case "cliente":
-        header("Location: ../Home");
-        break;
-    }
+     if(!isset($_SESSION['login']) || $_SESSION['login'] != true){
+       header("Location: ../../");
+     }
+     switch($_SESSION['typeUser']){
+       case "cliente":
+         header("Location: ../Home");
+         break;
+     }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="../../css/produtos.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script> 
     <title>Dashboard - Cadastro</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript">
       function validarCamposProd(){
         var imgProd = document.getElementById('imgProd').value;

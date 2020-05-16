@@ -1,8 +1,8 @@
 <?php
 
-function buscarProduto(){
+function buscarProduto($fk_idUser){
     include "conexao.php";
-    $sql = $conn->prepare("SELECT * FROM tb_produtos WHERE ativo = true");
+    $sql = $conn->prepare("SELECT * FROM tb_produtos WHERE ativo = true AND fk_idUser = '$fk_idUser'");
     $sql->execute();
     $result = $sql->get_result();
     while($line = $result->fetch_assoc()){
