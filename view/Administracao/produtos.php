@@ -4,99 +4,203 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../css/adm.css">
-    <title>Planet Burguer - Dashboard</title>
+    <link rel="stylesheet" href="../../css/sidebar.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/produtos.css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script> 
+    <title>Dashboard - Cadastro</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      function validarCamposProd(){
+        var imgProd = document.getElementById('imgProd').value;
+        var productName = document.getElementById('productName').value;
+        var price = document.getElementById('price').value;
+        var category = document.getElementById('category').value;
+        var about = document.getElementById('about').value;
+        var ativo = document.getElementById('ativo').value;
+
+        if(imgProd == ""){
+          alert("Escolha uma imagem para o produto!");
+          e.PreventDefault();
+        } else if(productName == ""){
+          alert("Preencha o nome do produto!");
+          e.preventDefault();
+        } else if(price == ""){
+          alert("Preencha o preço do produto!");
+          e.preventDefault();
+        } else if(category == ""){
+          alert("Preencha a categoria do produto!");
+          e.preventDefault();
+        } else if(about == ""){
+          alert("Preencha sobre o produto!");
+          e.preventDefault();
+        } else if(ativo == ""){
+          alert("Preencha o status do produto!");
+          e.preventDefault();
+        } else{
+          document.getElementById('cadProd').submit()
+        }
+      }
+      function validarCamposUpd(){
+        var imageUpd = document.getElementById('imageUpd').value;
+        var idProdutoUpd = document.getElementById('idProdutoUpd').value;
+        var productNameUpd = document.getElementById('productNameUpd').value;
+        var priceUpd = document.getElementById('priceUpd').value;
+        var categoryUpd = document.getElementById('categoryUpd').value;
+        var aboutUpd = document.getElementById('aboutUpd').value;
+        var ativoUpd = document.getElementById('ativoUpd').value;
+        if(imageUpd = ""){
+          alert("Escolha uma imagem para o produto!");
+        } else if(idProdutoUpd == ""){
+          alert("Preencha o ID do produto!");
+        } else if(productNameUpd == ""){
+          alert("Preencha o nome do produto!");
+          e.preventDefault();
+        } else if(priceUpd == ""){
+          alert("Preencha o preço do produto!");
+          e.preventDefault();
+        } else if(categoryUpd == ""){
+          alert("Preencha a categoria do produto!");
+          e.preventDefault();
+        } else if(aboutUpd == ""){
+          alert("Preencha sobre o produto!");
+          e.preventDefault();
+        } else if(ativoUpd == ""){
+          alert("Preencha o status do produto!");
+          e.preventDefault();
+        } else{
+          document.getElementById('updProd').submit()
+        }
+      }    
+      function previewCad(input) {
+        if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          $('#imagemProd')
+            .attr('src', e.target.result)
+            .width(300)
+            .height(300);
+        };
+        reader.readAsDataURL(input.files[0]);
+      }};
+      function previewUpd(input) {
+        if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          $('#imagemProdUpd')
+            .attr('src', e.target.result)
+            .width(300)
+            .height(300);
+        };
+        reader.readAsDataURL(input.files[0]);
+      }};
+    </script>
 </head>
 <body>
-    <nav class="navbar">
-        <ul class="navbar-nav">
-          
-        <li class="logo">
-            <a href="./dashboard.php" class="nav-link">
-              <span class="link-text logo-text">PB</span>
-              <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x">
-                <g class="fa-group">
-                  <path fill="currentColor" d="M224 273L88.37 409a23.78 23.78 0 0 1-33.8 0L32 386.36a23.94 23.94 0 0 1 0-33.89l96.13-96.37L32 159.73a23.94 23.94 0 0 1 0-33.89l22.44-22.79a23.78 23.78 0 0 1 33.8 0L223.88 239a23.94 23.94 0 0 1 .1 34z" class="fa-secondary"></path>
-                  <path fill="currentColor" d="M415.89 273L280.34 409a23.77 23.77 0 0 1-33.79 0L224 386.26a23.94 23.94 0 0 1 0-33.89L320.11 256l-96-96.47a23.94 23.94 0 0 1 0-33.89l22.52-22.59a23.77 23.77 0 0 1 33.79 0L416 239a24 24 0 0 1-.11 34z" class="fa-primary"></path>
-                </g>
-              </svg>
-            </a>
-        </li>
-    
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-              <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="space-station-moon-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-space-station-moon-alt fa-w-16 fa-5x">
-                <g class="fa-group">
-                  <path fill="currentColor" d="M501.70312,224H448V160H368V96h48V66.67383A246.86934,246.86934,0,0,0,256,8C119.03125,8,8,119.0332,8,256a250.017,250.017,0,0,0,1.72656,28.26562C81.19531,306.76953,165.47656,320,256,320s174.80469-13.23047,246.27344-35.73438A250.017,250.017,0,0,0,504,256,248.44936,248.44936,0,0,0,501.70312,224ZM192,240a80,80,0,1,1,80-80A80.00021,80.00021,0,0,1,192,240ZM384,343.13867A940.33806,940.33806,0,0,1,256,352c-87.34375,0-168.71094-11.46094-239.28906-31.73633C45.05859,426.01953,141.29688,504,256,504a247.45808,247.45808,0,0,0,192-91.0918V384H384Z" class="fa-secondary"></path>
-                  <path fill="currentColor" d="M256,320c-90.52344,0-174.80469-13.23047-246.27344-35.73438a246.11376,246.11376,0,0,0,6.98438,35.998C87.28906,340.53906,168.65625,352,256,352s168.71094-11.46094,239.28906-31.73633a246.11376,246.11376,0,0,0,6.98438-35.998C430.80469,306.76953,346.52344,320,256,320Zm-64-80a80,80,0,1,0-80-80A80.00021,80.00021,0,0,0,192,240Zm0-104a24,24,0,1,1-24,24A23.99993,23.99993,0,0,1,192,136Z" class="fa-primary"></path>
-                </g>
-              </svg>
-              <span class="link-text">Home</span>
-            </a>
-        </li>
-    
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-              <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="alien-monster" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-alien-monster fa-w-18 fa-9x">
-                <g class="fa-group">
-                  <path fill="currentColor" d="M560,128H528a15.99954,15.99954,0,0,0-16,16v80H480V176a15.99954,15.99954,0,0,0-16-16H416V96h48a16.00079,16.00079,0,0,0,16-16V48a15.99954,15.99954,0,0,0-16-16H432a15.99954,15.99954,0,0,0-16,16V64H368a15.99954,15.99954,0,0,0-16,16v48H224V80a15.99954,15.99954,0,0,0-16-16H160V48a15.99954,15.99954,0,0,0-16-16H112A15.99954,15.99954,0,0,0,96,48V80a16.00079,16.00079,0,0,0,16,16h48v64H112a15.99954,15.99954,0,0,0-16,16v48H64V144a15.99954,15.99954,0,0,0-16-16H16A15.99954,15.99954,0,0,0,0,144V272a16.00079,16.00079,0,0,0,16,16H64v80a16.00079,16.00079,0,0,0,16,16h48v80a16.00079,16.00079,0,0,0,16,16h96a16.00079,16.00079,0,0,0,16-16V432a15.99954,15.99954,0,0,0-16-16H192V384H384v32H336a15.99954,15.99954,0,0,0-16,16v32a16.00079,16.00079,0,0,0,16,16h96a16.00079,16.00079,0,0,0,16-16V384h48a16.00079,16.00079,0,0,0,16-16V288h48a16.00079,16.00079,0,0,0,16-16V144A15.99954,15.99954,0,0,0,560,128ZM224,320H160V224h64Zm192,0H352V224h64Z" class="fa-secondary"></path>
-                  <path fill="currentColor" d="M160,320h64V224H160Zm192-96v96h64V224Z" class="fa-primary"></path>
-                </g>
-              </svg>
-              <span class="link-text">Users</span>
-            </a>
-        </li>
-    
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-              <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="space-station-moon-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-space-station-moon-alt fa-w-16 fa-5x">
-                <g class="fa-group">
-                  <path fill="currentColor" d="M501.70312,224H448V160H368V96h48V66.67383A246.86934,246.86934,0,0,0,256,8C119.03125,8,8,119.0332,8,256a250.017,250.017,0,0,0,1.72656,28.26562C81.19531,306.76953,165.47656,320,256,320s174.80469-13.23047,246.27344-35.73438A250.017,250.017,0,0,0,504,256,248.44936,248.44936,0,0,0,501.70312,224ZM192,240a80,80,0,1,1,80-80A80.00021,80.00021,0,0,1,192,240ZM384,343.13867A940.33806,940.33806,0,0,1,256,352c-87.34375,0-168.71094-11.46094-239.28906-31.73633C45.05859,426.01953,141.29688,504,256,504a247.45808,247.45808,0,0,0,192-91.0918V384H384Z" class="fa-secondary"></path>
-                  <path fill="currentColor" d="M256,320c-90.52344,0-174.80469-13.23047-246.27344-35.73438a246.11376,246.11376,0,0,0,6.98438,35.998C87.28906,340.53906,168.65625,352,256,352s168.71094-11.46094,239.28906-31.73633a246.11376,246.11376,0,0,0,6.98438-35.998C430.80469,306.76953,346.52344,320,256,320Zm-64-80a80,80,0,1,0-80-80A80.00021,80.00021,0,0,0,192,240Zm0-104a24,24,0,1,1-24,24A23.99993,23.99993,0,0,1,192,136Z" class="fa-primary"></path>
-                </g>
-              </svg>
-              <span class="link-text">Produtos</span>
-            </a>
-        </li>
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>Dashboard</h2>
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="#"><i class="fas fa-user"></i>Usuários</a></li>
+            <li><a href="./produtos.php"><i class="fas fa-project-diagram"></i>Cadastro</a></li>
+            <li><a href="./estoque.php"><i class="fas fa-cart-plus"></i></i>Produtos</a></li>
+            <li><a href="../cabecalhos/deslogar.php"><i class="fas fa-sign-out-alt"></i>Sair</a></li>
+        </ul> 
+    </div>
+    <div class="main_content">
+        <div class="header"> Cadastro e Update de Produtos </div>  
+        <div class="info">
+          <div class="row">
+            <div class="column">
+              <div class="card">
+                
+                <form method="POST" action="../../controllers/validarProduto.php" id="cadProd">
+                  <div class="container-file">
+                    <img id="imagemProd" alt="" src="../../assets/images/300por300.png">
+                    <input type="file" name="imgProd" id="imgProd" onchange="previewCad(this);">
+                  </div>
+                  <div class="container-name">
+                    <label for="productName">Nome do produto:</label>
+                    <input type="text" name="productName" id="productName">
+                  </div>
+                  <div class="container-price">
+                    <label for="price">Preço do produto:</label>
+                    <input type="text" name="price" id="price">
+                  </div>
+                  <div class="container-price">
+                      <label for="category">Categoria: </label>
+                      <input type="text" name="category" id="category">
+                  </div>
+                  <div class="container-about">
+                    <label for="about">Sobre o produto: </label>
+                    <textarea name="about" id="about" cols="30" rows="10"></textarea>
+                  </div>
+                  <div class="container-status">
+                    <label for="ativo">Escolha uma opção: </label>
+                    <select name="ativo" id="ativo">
+                      <option value="null">Selecione</option>
+                      <option value="true">Ativo</option>
+                      <option value="false">Inativo</option>
+                    </select>
+                  </div>
+                  <div class="container-button">
+                    <button type="submit" onclick="return validarCamposProd()" > Cadastrar produto </button>
+                  </div>
+                </form>
 
-        <li class="nav-item">
-            <a href="./estoque.php" class="nav-link">
-              <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="space-station-moon-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-space-station-moon-alt fa-w-16 fa-5x">
-                <g class="fa-group">
-                  <path fill="currentColor" d="M501.70312,224H448V160H368V96h48V66.67383A246.86934,246.86934,0,0,0,256,8C119.03125,8,8,119.0332,8,256a250.017,250.017,0,0,0,1.72656,28.26562C81.19531,306.76953,165.47656,320,256,320s174.80469-13.23047,246.27344-35.73438A250.017,250.017,0,0,0,504,256,248.44936,248.44936,0,0,0,501.70312,224ZM192,240a80,80,0,1,1,80-80A80.00021,80.00021,0,0,1,192,240ZM384,343.13867A940.33806,940.33806,0,0,1,256,352c-87.34375,0-168.71094-11.46094-239.28906-31.73633C45.05859,426.01953,141.29688,504,256,504a247.45808,247.45808,0,0,0,192-91.0918V384H384Z" class="fa-secondary"></path>
-                  <path fill="currentColor" d="M256,320c-90.52344,0-174.80469-13.23047-246.27344-35.73438a246.11376,246.11376,0,0,0,6.98438,35.998C87.28906,340.53906,168.65625,352,256,352s168.71094-11.46094,239.28906-31.73633a246.11376,246.11376,0,0,0,6.98438-35.998C430.80469,306.76953,346.52344,320,256,320Zm-64-80a80,80,0,1,0-80-80A80.00021,80.00021,0,0,0,192,240Zm0-104a24,24,0,1,1-24,24A23.99993,23.99993,0,0,1,192,136Z" class="fa-primary"></path>
-                </g>
-              </svg>
-              <span class="link-text">Estoque</span>
-            </a>
-        </li>
+              </div>
+            </div>
+            <div class="column">
+              <div class="card">
 
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-              <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="space-station-moon-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-space-station-moon-alt fa-w-16 fa-5x">
-                <g class="fa-group">
-                  <path fill="currentColor" d="M501.70312,224H448V160H368V96h48V66.67383A246.86934,246.86934,0,0,0,256,8C119.03125,8,8,119.0332,8,256a250.017,250.017,0,0,0,1.72656,28.26562C81.19531,306.76953,165.47656,320,256,320s174.80469-13.23047,246.27344-35.73438A250.017,250.017,0,0,0,504,256,248.44936,248.44936,0,0,0,501.70312,224ZM192,240a80,80,0,1,1,80-80A80.00021,80.00021,0,0,1,192,240ZM384,343.13867A940.33806,940.33806,0,0,1,256,352c-87.34375,0-168.71094-11.46094-239.28906-31.73633C45.05859,426.01953,141.29688,504,256,504a247.45808,247.45808,0,0,0,192-91.0918V384H384Z" class="fa-secondary"></path>
-                  <path fill="currentColor" d="M256,320c-90.52344,0-174.80469-13.23047-246.27344-35.73438a246.11376,246.11376,0,0,0,6.98438,35.998C87.28906,340.53906,168.65625,352,256,352s168.71094-11.46094,239.28906-31.73633a246.11376,246.11376,0,0,0,6.98438-35.998C430.80469,306.76953,346.52344,320,256,320Zm-64-80a80,80,0,1,0-80-80A80.00021,80.00021,0,0,0,192,240Zm0-104a24,24,0,1,1-24,24A23.99993,23.99993,0,0,1,192,136Z" class="fa-primary"></path>
-                </g>
-              </svg>
-              <span class="link-text">Configurações</span>
-            </a>
-        </li>
-    
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-              <svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="space-shuttle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="svg-inline--fa fa-space-shuttle fa-w-20 fa-5x">
-                <g class="fa-group">
-                  <path fill="currentColor" d="M32 416c0 35.35 21.49 64 48 64h16V352H32zm154.54-232h280.13L376 168C243 140.59 222.45 51.22 128 34.65V160h18.34a45.62 45.62 0 0 1 40.2 24zM32 96v64h64V32H80c-26.51 0-48 28.65-48 64zm114.34 256H128v125.35C222.45 460.78 243 371.41 376 344l90.67-16H186.54a45.62 45.62 0 0 1-40.2 24z" class="fa-secondary"></path>
-                  <path fill="currentColor" d="M592.6 208.24C559.73 192.84 515.78 184 472 184H186.54a45.62 45.62 0 0 0-40.2-24H32c-23.2 0-32 10-32 24v144c0 14 8.82 24 32 24h114.34a45.62 45.62 0 0 0 40.2-24H472c43.78 0 87.73-8.84 120.6-24.24C622.28 289.84 640 272 640 256s-17.72-33.84-47.4-47.76zM488 296a8 8 0 0 1-8-8v-64a8 8 0 0 1 8-8c31.91 0 31.94 80 0 80z" class="fa-primary"></path>
-                </g>
-              </svg>
-              <span class="link-text">Sair</span>
-            </a>
-        </li>
-        </ul>
-    </nav>
-
-    
+                  <form method="POST" action="../../controllers/validarUpdate.php" id="updProd">
+                    <div class="container-file">
+                      <img src="../../assets/images/300por300.png" id="imagemProdUpd" alt="" style="height: 300px; width: 300px;">
+                      <input type="file" name="imageUpd" id="imageUpd" onchange="previewUpd(this);">
+                    </div>
+                    <div class="container-name">
+                      <label for="idProdutoUpd">ID do produto: </label>
+                      <input type="text" name="idProdutoUpd" id="idProdutoUpd">
+                    </div>
+                    <div class="container-name">
+                      <label for="productNameUpd">Nome do produto:</label>
+                      <input type="text" name="productNameUpd" id="productNameUpd">
+                    </div>
+                    <div class="container-price">
+                      <label for="priceUpd">Preço do produto:</label>
+                      <input type="text" name="priceUpd" id="priceUpd">
+                    </div>
+                    <div class="container-price">
+                      <label for="categoryUpd">Categoria: </label>
+                      <input type="text" name="categoryUpd" id="categoryUpd">
+                    </div>
+                    <div class="container-about">
+                      <label for="aboutUpd">Sobre o produto: </label>
+                      <textarea name="aboutUpd" id="aboutUpd" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="container-status">
+                      <label for="ativoUpd">Escolha uma opção: </label>
+                      <select name="ativoUpd" id="ativoUpd">
+                        <option value="null">Selecione</option>
+                        <option value="true">Ativo</option>
+                        <option value="false">Inativo</option>
+                      </select>
+                    </div>
+                    <div class="container-button">
+                      <button type="submit" onclick="return validarCamposUpd()"> Atualizar produto </button>
+                    </div>
+                  </form>
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../node_modules/popper.js/dist/umd/popper.js"></script> 
 </body>
 </html>

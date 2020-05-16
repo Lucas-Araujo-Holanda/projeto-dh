@@ -2,23 +2,18 @@
 
 function buscarProduto(){
     include "conexao.php";
-    $sql = $conn->prepare("SELECT * FROM tb_produto WHERE ativo = true");
+    $sql = $conn->prepare("SELECT * FROM tb_produtos WHERE ativo = true");
     $sql->execute();
     $result = $sql->get_result();
     while($line = $result->fetch_assoc()){
-        echo "
-        <div class='flip-card'>
-          <div class='flip-card-inner'>
-            <div class='flip-card-front'>
-              <img src='../../assets/images/hamburger.jpg' alt='Avatar' style='width:300px;height:300px;'>
-            </div>
-            <div class='flip-card-back'>
-              <h1>".$line['productName']."</h1>
-              <p><i class='fas fa-dollar-sign'></i>".$line['price']."</p>
-              <p>Sobre:" .$line['about']."</p>
-            </div>
+        echo '
+        <div class="column">
+          <div class="card">
+            <img src="../../assets/images/'.$line['foto'].'" alt="" style="height: 300px; width: 300px">
+            <p>'.$line['productName'].'</p>
+            <p>Preço: '.$line['price'].'</p>
+            <p>Sobre: '.$line['about'].'</p>
           </div>
-        </div>
-        ";
+        </div>';
     }
 }

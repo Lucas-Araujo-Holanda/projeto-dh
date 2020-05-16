@@ -1,0 +1,97 @@
+.column {
+    float: left;
+    width: 50%;
+    padding: 0 10px;
+    
+  }
+  
+  /* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    height: 100%;
+}
+
+form{
+    display: block;
+}
+
+.container-file img{
+    display: block;
+    font-size: 20px
+}
+
+.container-name label{
+    display: block;
+    font-size: 20px
+}
+
+.container-price label{
+    display: block;
+    font-size: 20px
+}
+
+.container-about label{
+    display: block;
+    font-size: 20px
+}
+
+.container-status label{
+    display: block;
+    font-size: 20px
+}
+
+
+/* Inputs */
+
+.container-name input{
+    width: 35rem;
+    height: 2.6vh;
+    font-size: 18px;
+    padding-left: 8px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.container-price input{
+    width: 35rem;
+    height: 2.6vh;
+    font-size: 18px;
+    padding-left: 8px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.container-about textarea{
+    width: 35rem;
+    height: 8vh;
+    font-size: 18px;
+    padding-left: 8px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.container-button button{
+    height: 3rem;
+    width: 20vh;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.container-file input{
+    padding-top: 10px;
+}
+
+.img{
+    height: 300px;
+    width: 300px;
+}
+  

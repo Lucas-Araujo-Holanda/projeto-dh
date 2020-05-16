@@ -5,38 +5,42 @@
         header("Location: ../");
         die();
     }
+    $imageUpd = $_POST['imageUpd'];
+    $idProdutoUpd = $_POST['idProdutoUpd'];
+    $name_productUpd = $_POST['productNameUpd']; 
+    $priceUpd = $_POST['priceUpd'];
+    $aboutUpd = $_POST['aboutUpd'];
+    $categoryUpd = $_POST['categoryUpd'];
+    $ativoUpd = $_POST['ativoUpd']; 
     
-    $imageProd = $_POST['imgProd'];
-    $name_product = $_POST['productName']; 
-    $price = $_POST['price'];
-    $about = $_POST['about'];
-    $category = $_POST['category'];
-    $ativo = $_POST['ativo']; 
-
-    if(empty($imageProd)){
+    if(empty($imageUpd)){
         header('Location: /projeto-dh/view/administracao/produtos.php');
         die();
     }
-    if(empty($name_product)){
+    if(empty($idProdutoUpd)){
         header('Location: /projeto-dh/view/administracao/produtos.php');
         die();
     }
-    if(empty($price)){
+    if(empty($name_productUpd)){
         header('Location: /projeto-dh/view/administracao/produtos.php');
         die();
     }
-    if(empty($about)){
+    if(empty($priceUpd)){
         header('Location: /projeto-dh/view/administracao/produtos.php');
         die();
     }
-    if(empty($category)){
+    if(empty($aboutUpd)){
         header('Location: /projeto-dh/view/administracao/produtos.php');
         die();
     }
-    if(empty($ativo)){
+    if(empty($categoryUpd)){
+        header('Location: /projeto-dh/view/administracao/produtos.php');
+        die();
+    }
+    if(empty($ativoUpd)){
         header('Location: /projeto-dh/view/administracao/produtos.php');
         die();
     }
 
-    include_once '../model/cadastroProd.php';  
+    include_once '../model/updateProd.php';  
 ?>
