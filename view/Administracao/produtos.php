@@ -22,12 +22,12 @@
     <title>Dashboard - Cadastro</title>
     <script type="text/javascript">
       function validarCamposProd(){
-        var imgProd = document.getElementById('imgProd').value;
-        var productName = document.getElementById('productName').value;
-        var price = document.getElementById('price').value;
-        var category = document.getElementById('category').value;
-        var about = document.getElementById('about').value;
-        var ativo = document.getElementById('ativo').value;
+        const imgProd = document.getElementById('imgProd').value;
+        const productName = document.getElementById('productName').value;
+        const price = document.getElementById('price').value;
+        const category = document.getElementById('category').value;
+        const about = document.getElementById('about').value;
+        const ativo = document.getElementById('ativo').value;
 
         if(imgProd == ""){
           alert("Escolha uma imagem para o produto!");

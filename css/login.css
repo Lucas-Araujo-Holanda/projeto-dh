@@ -1,0 +1,51 @@
+body{
+    background: red;
+}
+
+.login-container{
+    background: #FFF;
+    border-radius: 2%;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    text-align: center;
+    margin-top: 25vh;
+}
+
+form h1{
+    font-size: 28px;
+    padding-top: 60px;
+    text-align: center;
+}
+
+form a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.form-container label{
+    display: block;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.form-container input{
+    width: 18rem;
+    height: 2vh;
+    font-size: 18px;
+    padding-left: 8px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.btn-container button{
+    height: 3rem;
+    width: 18rem;
+    border-radius: 10px;
+    border: 1px solid black;
+    background: red;
+}
+
+button{
+    margin-top: 30px;
+}

@@ -12,7 +12,7 @@
         echo "<script> alert('Produto atualizado com sucesso!');</script>";
         header('Location: /projeto-dh/view/administracao/produtos.php');
     } else {
-        echo "Erro ao dar update! " . $conn->error;
+        echo "Erro ao dar update no produto! " . $conn->error;
     }
       
     $conn->close();
