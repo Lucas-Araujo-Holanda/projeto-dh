@@ -18,6 +18,7 @@
   "homepage": "https://github.com/hugokishi/projeto-dh#readme",
   "dependencies": {
     "jquery": "^3.5.1",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.16.1",
+    "sweetalert2": "^9.11.0"
   }
 }

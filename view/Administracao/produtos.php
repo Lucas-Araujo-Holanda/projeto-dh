@@ -1,13 +1,13 @@
 <?php
     session_start();
-     if(!isset($_SESSION['login']) || $_SESSION['login'] != true){
-       header("Location: ../../");
-     }
-     switch($_SESSION['typeUser']){
-       case "cliente":
-         header("Location: ../Home");
-         break;
-     }
+    //  if(!isset($_SESSION['login']) || $_SESSION['login'] != true){
+    //    header("Location: ../../");
+    //  }
+    //  switch($_SESSION['typeUser']){
+    //    case "cliente":
+    //      header("Location: ../Home");
+    //      break;
+    //  }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -21,67 +21,6 @@
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script> 
     <title>Dashboard - Cadastro</title>
     <script type="text/javascript">
-      function validarCamposProd(){
-        const imgProd = document.getElementById('imgProd').value;
-        const productName = document.getElementById('productName').value;
-        const price = document.getElementById('price').value;
-        const category = document.getElementById('category').value;
-        const about = document.getElementById('about').value;
-        const ativo = document.getElementById('ativo').value;
-
-        if(imgProd == ""){
-          alert("Escolha uma imagem para o produto!");
-          e.PreventDefault();
-        } else if(productName == ""){
-          alert("Preencha o nome do produto!");
-          e.preventDefault();
-        } else if(price == ""){
-          alert("Preencha o preço do produto!");
-          e.preventDefault();
-        } else if(category == ""){
-          alert("Preencha a categoria do produto!");
-          e.preventDefault();
-        } else if(about == ""){
-          alert("Preencha sobre o produto!");
-          e.preventDefault();
-        } else if(ativo == ""){
-          alert("Preencha o status do produto!");
-          e.preventDefault();
-        } else{
-          document.getElementById('cadProd').submit()
-        }
-      }
-      function validarCamposUpd(){
-        var imageUpd = document.getElementById('imageUpd').value;
-        var idProdutoUpd = document.getElementById('idProdutoUpd').value;
-        var productNameUpd = document.getElementById('productNameUpd').value;
-        var priceUpd = document.getElementById('priceUpd').value;
-        var categoryUpd = document.getElementById('categoryUpd').value;
-        var aboutUpd = document.getElementById('aboutUpd').value;
-        var ativoUpd = document.getElementById('ativoUpd').value;
-        if(imageUpd = ""){
-          alert("Escolha uma imagem para o produto!");
-        } else if(idProdutoUpd == ""){
-          alert("Preencha o ID do produto!");
-        } else if(productNameUpd == ""){
-          alert("Preencha o nome do produto!");
-          e.preventDefault();
-        } else if(priceUpd == ""){
-          alert("Preencha o preço do produto!");
-          e.preventDefault();
-        } else if(categoryUpd == ""){
-          alert("Preencha a categoria do produto!");
-          e.preventDefault();
-        } else if(aboutUpd == ""){
-          alert("Preencha sobre o produto!");
-          e.preventDefault();
-        } else if(ativoUpd == ""){
-          alert("Preencha o status do produto!");
-          e.preventDefault();
-        } else{
-          document.getElementById('updProd').submit()
-        }
-      }    
       function previewCad(input) {
         if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -127,7 +66,7 @@
             <div class="column">
               <div class="card">
                 
-                <form method="POST" action="../../controllers/validarProduto.php" id="cadProd">
+                <form method="POST" action="../../controllers/validarProduto.php" id="cad">
                   <div class="container-file">
                     <img id="imagemProd" alt="" src="../../assets/images/300por300.png">
                     <input type="file" name="imgProd" id="imgProd" onchange="previewCad(this);">
@@ -157,7 +96,7 @@
                     </select>
                   </div>
                   <div class="container-button">
-                    <button type="submit" onclick="return validarCamposProd()" > Cadastrar produto </button>
+                    <button type="submit"> Cadastrar produto </button>
                   </div>
                 </form>
 
@@ -166,7 +105,7 @@
             <div class="column">
               <div class="card">
 
-                  <form method="POST" action="../../controllers/validarUpdate.php" id="updProd">
+                  <form method="POST" action="../../controllers/validarUpdate.php" id="mudanca">
                     <div class="container-file">
                       <img src="../../assets/images/300por300.png" id="imagemProdUpd" alt="" style="height: 300px; width: 300px;">
                       <input type="file" name="imageUpd" id="imageUpd" onchange="previewUpd(this);">
@@ -200,10 +139,9 @@
                       </select>
                     </div>
                     <div class="container-button">
-                      <button type="submit" onclick="return validarCamposUpd()"> Atualizar produto </button>
+                      <button type="submit"> Atualizar produto </button>
                     </div>
-                  </form>
-                  
+                  </form>  
               </div>
             </div>
           </div>
@@ -211,6 +149,9 @@
     </div>
 </div>
     <script src="../../node_modules/jquery/dist/jquery.js"></script>
-    <script src="../../node_modules/popper.js/dist/umd/popper.js"></script> 
+    <script src="../../node_modules/popper.js/dist/popper.js"></script>
+    <script src="../../node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
+    <script src="../../js/validacoes.js"></script>
+
 </body>
 </html>

@@ -7,18 +7,20 @@
         die();
     }
 
-    $user = $_POST['']; 
-    $pass = $_POST['']; 
+    $user = $_POST['user']; 
+    $pass = $_POST['pass']; 
 
     if(empty($user)){
-        header('Location: /projeto-dh/view/home/login.php');
+        echo "ErroUser";
         die();
     }
     if(empty($pass)){
-        header('Location: /projeto-dh/view/home/login.php');
+        echo "ErroPass";
         die();
     }
 
-    include_once '../model/login.php';
+    echo "Sucesso";
+
+    // include_once '../model/login.php';
 
 ?>

@@ -12,30 +12,30 @@
     $about = $_POST['about'];
     $category = $_POST['category'];
     $ativo = $_POST['ativo']; 
-    $fk_idUser = $_SESSION['idUser'];
+    // $fk_idUser = $_SESSION['idUser'];
 
     if(empty($imageProd)){
-        header('Location: /projeto-dh/view/administracao/produtos.php');
+        echo "ErroImagem";
         die();
     }
     if(empty($name_product)){
-        header('Location: /projeto-dh/view/administracao/produtos.php');
+        echo "ErroProduto";
         die();
     }
     if(empty($price)){
-        header('Location: /projeto-dh/view/administracao/produtos.php');
+        echo "ErroPreco";
         die();
     }
     if(empty($about)){
-        header('Location: /projeto-dh/view/administracao/produtos.php');
+        echo "ErroSobre";
         die();
     }
     if(empty($category)){
-        header('Location: /projeto-dh/view/administracao/produtos.php');
+        echo "ErroCategoria";
         die();
     }
     if(empty($ativo)){
-        header('Location: /projeto-dh/view/administracao/produtos.php');
+        echo "ErroAtivo";
         die();
     }
 

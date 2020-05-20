@@ -6,24 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     <link rel="stylesheet" href="../../css/login.css">
-    <link rel="stylesheet" href="../../css/glolbal.css">
-    <script>
-        function validarCampos(){
-            const user = document.getElementById('user').value;
-            const pass = document.getElementById('pass').value;
-            if(user == ""){
-                alert("Preencha o campo de usuário!")
-            } else if (pass == ""){
-                alert("Preencha o campo de senha!")
-            } else{
-                document.getElementById('loginSubmit').submit()
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="../../css/global.css">
 </head>
 <body>
     <div class="login-container">
-        <form action="../../controllers/validarLogin.php" method="POST"id="loginSubmit">
+        <form action="../../controllers/validarLogin.php" method="POST" id="login">
             <h1> Faça seu Login </h1>
             <div class="form-container">
                 <label for="user">Email:</label>
@@ -34,10 +21,14 @@
                 <input type="password" name="pass" id="pass">
             </div>
             <div class="btn-container">
-                <button type="submit" onclick="return validarCampos()">Entrar</button>
+                <button type="submit">Entrar</button>
             </div>
             <p>É novo na plataforma?<a href="./cadastro.php"> Clique aqui para se cadastrar!</a></p>
         </form>
     </div>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../node_modules/popper.js/dist/popper.js"></script>
+    <script src="../../node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
+    <script src="../../js/validacoes.js"></script>
 </body>
 </html>
